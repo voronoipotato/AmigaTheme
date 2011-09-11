@@ -38,13 +38,13 @@
             ol{color:white; font-family: 'VT323', cursive;}
             ul{ color:white; font-family: 'VT323', cursive;}
             li{ color:white; font-family: 'VT323', cursive;}
-            a{  padding-top:0px; background-color:white; color:#00478E; font-family: 'VT323', cursive;}
+            a{ background-color:white; color:#00478E; font-family: 'VT323', cursive;}
             b{ color:white; font-family: 'VT323', cursive;}
             blockquote{ color:white; font-family: 'VT323', cursive;}
             span{color:white; font-family: 'VT323', cursive;}
-            .title{  padding-left: 4px; padding-right:4px; background-color:white; color:#00478E;  }
+            .title{ padding-left: 4px; padding-right:4px; background-color:white; color:#00478E;  }
             body{ background-image:url('http://i.imgur.com/lhm5V.png');background-repeat:repeat;font-family: 'VT323', cursive;}
-            .post{margin-left: auto; margin-right: 80px; margin-top:29px; width: 550px; background-color:#00478E; background-image:url('http://i.imgur.com/9DPBg.png');background-repeat:repeat-x; border:3px white solid; font-family: 'VT323', cursive;}
+            .post{margin-left: auto; margin-right:80px; margin-top:29px; width:550px; background-color:#00478E; background-image:url('http://i.imgur.com/9DPBg.png');background-repeat:repeat-x; border:3px white solid; font-family: 'VT323', cursive;}
 
 
 		</style>
@@ -59,13 +59,14 @@
  
 		<div class="content">
 			<section class="posts">
-				{block:Posts}{block:Text}<article class="post text">
-                {block:Title} <h2><span class="title"> <img src="http://i.imgur.com/36z6Q.png"> <a href="{Permalink}">{Title}</a></span></h2> {/block:Title}
- 
+            {block:Posts}{block:Text}<article class="post text">
+                {block:Title} <h2><span class="title"><img src="http://i.imgur.com/36z6Q.png"> <a href="{Permalink}">{Title}</a></span></h2> {/block:Title}
+                </br>
+                </br>
 					{Body}
 				</article>{/block:Text}
  
-				{block:Photo}<article class="post ">
+				{block:Photo}<article class="post photo">
                 <h2><span class="title"><img src="http://i.imgur.com/36z6Q.png"></span></h2>
                 <figure>
 						<img src="{PhotoURL-500}" alt="{PhotoAlt}">
@@ -96,7 +97,8 @@
  
 				{block:Link}<article class="post link">
                 <h2><span class="title"><img src="http://i.imgur.com/36z6Q.png"><a href="{URL}"{Target}>{Name}</a></span></h2>
- 
+                </br>
+                </br>
 					{block:Description}<p class="description">{Description}</p>{/block:Description}
 				</article>{/block:Link}
  
@@ -155,8 +157,8 @@
         <div class="post">
             <h2><span class="title">
             <img src="http://i.imgur.com/36z6Q.png">
-                        {block:NextPage}<a href="{NextPage}">Next &rarr;</a>{/block:NextPage}
                         {block:PreviousPage}<a href="{PreviousPage}">&larr; Previous</a>{/block:PreviousPage}
+                        {block:NextPage}<a href="{NextPage}">Next &rarr;</a>{/block:NextPage}
  
                         <span>{CurrentPage}/{TotalPages}</span>
                     </span>
