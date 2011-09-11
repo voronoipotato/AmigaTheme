@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--
+			Tumblr Custom Theme Framework, v1.2 (21/08/2011)
+			Author: Angel Paunchev (http://paunchev.net)
+ 
+			Use this framework as a starting point for your custom Tumblr themes.
+ 
+			Main features include:
+ 
+			* semantic HTML5 markup;
+			* compressed version of Eric Meyer's CSS reset (http://meyerweb.com/eric/tools/css/reset/);
+			* support for all post types, including Photosets and Answers;
+			* support for Ask and Submit links.
+ 
+			Modfiy and use however you like.
+		-->
+ 
+		<meta charset="utf-8">
+		{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+ 
+		<title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+ 
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="apple-touch-icon" href="{PortraitURL-128}">
+ 
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+ 
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+ 
+		<style>
+			/* RESET */
+			html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+ 
+			/* MAIN */
+ 
+ 
+			{CustomCSS}
+		</style>
+	</head>
+ 
+	<body>
+		<header>
+			<h1>{Title}</h1>
+ 
+			{block:Description}<p>{Description}</p>{/block:Description}
+		</header>
+ 
+		<div class="content">
+			<section class="posts">
+				{block:Posts}{block:Text}<article class="post text">
+					{block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+ 
+					{Body}
+				</article>{/block:Text}
+ 
+				{block:Photo}<article class="post photo">
+					<figure>
+						<img src="{PhotoURL-500}" alt="{PhotoAlt}">
+ 
+						{block:Caption}<figcaption>{Caption}</figcaption>{/block:Caption}
+					</figure>
+				</article>{/block:Photo}
+ 
+				{block:Photoset}<article class="post photoset">
+					<figure>
+						{Photoset-500}
+ 
+						{block:Caption}<figcaption>{Caption}</figcaption>{/block:Caption}
+					</figure>
+				</artlcle>{/block:Photoset}
+ 
+				{block:Quote}<article class="post quote">
+					<blockquote>
+						<p>
+							{Quote}
+ 
+							{block:Source}<b>{Source}</b>{/block:Source}
+						</p>
+					</blockquote>
+				</article>{/block:Quote}
+ 
+				{block:Link}<article class="post link">
+					<a href="{URL}"{Target}>{Name}</a>
+ 
+					{block:Description}<p class="description">{Description}</p>{/block:Description}
+				</article>{/block:Link}
+ 
+				{block:Chat}<article class="post chat">
+					{block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+ 
+					<ul>
+						{block:Lines}<li class="{Alt} user_{UserNumber}">
+							{block:Label}<b>{Label}</b>{/block:Label}
+ 
+							{Line}
+						</li>{/block:Lines}
+					</ul>
+				</article>{/block:Chat}
+ 
+				{block:Video}<article class="post video">
+					<figure>
+						{Video-500}
+ 
+						{block:Caption}<figcaption>{Caption}</figcaption>{/block:Caption}
+					</figure>
+				</article>{/block:Video}
+ 
+				{block:Audio}<article class="post audio">
+					<figure>
+						{AudioPlayerBlack}
+ 
+						{block:Caption}<figcaption>{Caption}</figcaption>{/block:Caption}
+					</figure>
+				</article>{/block:Audio}
+ 
+				{block:Answer}<article class="post answer">
+					<blockquote class="ask-question">
+						<p>
+							&ldquo;{Question}&rdquo;
+							<b>&ndash; asked by {Asker}</b>
+						</p>
+					</blockquote>
+ 
+					<blockquote class="ask-answer">
+						{Answer}
+					</blockquote>
+				</article>{/block:Answer}{/block:Posts}
+ 
+				{block:Pagination}<nav class="pagination">
+					{block:PreviousPage}<a href="{PreviousPage}">&larr; Previous</a>{/block:PreviousPage}
+ 
+					<span>{CurrentPage}/{TotalPages}</span>
+ 
+					{block:NextPage}<a href="{NextPage}">Next &rarr;</a>{/block:NextPage}
+				</nav>{/block:Pagination}
+			</section>
+		</div>
+ 
+		<footer>
+			<ul class="footer-links">
+				<li><a href="/archive">Archive</a></li>
+				<li><a href="{RSS}">RSS</a></li>
+				{block:AskEnabled}<li><a href="/ask">Ask</a></li>{/block:AskEnabled}
+				{block:SubmissionsEnabled}<li><a href="/submit">Submit</a></li>{/block:SubmissionsEnabled}
+			</ul>
+ 
+			<p class="copyright">Powered by <a href="http://www.tumblr.com/">Tumblr</a>.</p>
+		</footer>
+	</body>
+</html>
+
