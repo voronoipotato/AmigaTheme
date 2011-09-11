@@ -2,9 +2,20 @@
 <html lang="en">
 	<head>
 		<!--
-			 framework Author: Angel Paunchev (http://paunchev.net)
-             Inspired by: Digital a Love story, and the amiga workbench
-             Author: Alan Ball 
+			Tumblr Custom Theme Framework, v1.2 (21/08/2011)
+			Author: Angel Paunchev (http://paunchev.net)
+ 
+			Use this framework as a starting point for your custom Tumblr themes.
+ 
+			Main features include:
+ 
+			* semantic HTML5 markup;
+			* compressed version of Eric Meyer's CSS reset (http://meyerweb.com/eric/tools/css/reset/);
+			* support for all post types, including Photosets and Answers;
+			* support for Ask and Submit links.
+ 
+			Modfiy and use however you like.
+
              026DD7 ( light blue )
             00478E ( dark blue )
 		-->
@@ -19,7 +30,16 @@
  
 		<link rel="alternate" type="application/rss+xml" href="{RSS}">
  
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+ 
 		<style>
+			/* RESET */
+			html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+ 
+			/* MAIN */
+ 
  
 			{CustomCSS}
 		</style>
